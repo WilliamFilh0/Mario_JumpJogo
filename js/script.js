@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const loop = setInterval(() => {
 
+    console.log('loop')
+
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
@@ -31,8 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
       mario.style.bottom = `${marioPosition}px`;
  
       mario.src = './images/game-over.png';
-      mario.style.width = '75px'
+      mario.style.width = '75px' 
       mario.style.marginLeft = '50px'
+
+      clearInterval(loop); 
     }
 
 
